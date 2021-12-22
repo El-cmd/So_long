@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:01:15 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/21 04:55:39 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/22 03:22:14 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ int	main()
 	count_c(tout.mlx);
 	init(tout.mlx);
 	mlx_key_hook(tout.mlx->win, test, &tout);
+	mlx_loop_hook(tout.mlx->mlx, put_all, &tout);
 	mlx_loop(tout.mlx->mlx);
 }
