@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:01:15 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/22 03:22:14 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/23 01:27:46 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,10 @@ int	test(int keycode, t_mlx_datas *mlx)
 	if (keycode == 's')
 		move_d(mlx);
 	if (keycode == ' ')
+	{
+		hakai(mlx);
 		exit(1);
+	}
 	while (mlx->map[i] != NULL)
 	{
 		printf("%s\n", mlx->map[i]);

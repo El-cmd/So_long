@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:02:23 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/22 05:21:52 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/23 01:27:15 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ void	put_wall(t_mlx_datas *mlx);
 int		put_all(t_mlx_datas *mlx);
 void	put_n1(t_mlx_datas *mlx);
 void	put_n2(t_mlx_datas *mlx);
+void	hakai(t_mlx_datas *mlx);
 
 #endif
