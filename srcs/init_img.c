@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 00:15:01 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/22 05:15:29 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/23 04:38:08 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,8 @@ void    init_img(t_mlx_datas *mlx)
     &mlx->N1.width, &mlx->N1.height);
     mlx->N2.img = mlx_xpm_file_to_image(mlx->mlx, "Textures/N2.xpm",  \
     &mlx->N2.width, &mlx->N2.height);
+    mlx->exit.img = mlx_xpm_file_to_image(mlx->mlx, "Textures/exit.xpm",  \
+    &mlx->exit.width, &mlx->exit.height);
+    mlx->poke.img = mlx_xpm_file_to_image(mlx->mlx, "Textures/collect.xpm",  \
+    &mlx->poke.width, &mlx->poke.height);
 }

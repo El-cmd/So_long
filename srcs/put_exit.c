@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   put_exit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 15:02:23 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/23 03:15:20 by vlothlinux       ###   ########.fr       */
+/*   Created: 2021/12/23 04:19:04 by vlothlinux        #+#    #+#             */
+/*   Updated: 2021/12/23 04:26:27 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void init(t_mlx_datas *mlx)
+void    put_exit(t_mlx_datas *mlx)
 {
-    mlx->px = 50;
-    mlx->win_x = (mlx->x_max)*(mlx->px);
-    mlx->win_y = (mlx->y_max)*(mlx->px);
-    mlx->mlx = mlx_init();
-    mlx->win = mlx_new_window(mlx->mlx, mlx->win_x, mlx->win_y, "so_long");
-    mlx->winner = 0;
+    int i;
+    int n;
+    int X;
+    int Y;
+
+    Y  = 0;
+    X  = 0;
+    n = 0;
+    i = 0;
+    while (Y < 500)
+    {
+        while (X < 1000)
+        {
+            if (mlx->map[i][n] == 'E')
+		        mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->exit.img,\
+                X, Y);
+		    X += 50;
+            n++;
+        }
+        n = 0;
+        Y += 50;
+        X = 0;
+        i++;
+	}
 }

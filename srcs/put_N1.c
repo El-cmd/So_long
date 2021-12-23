@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 05:17:05 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/22 05:19:13 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/23 03:51:52 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void put_n1(t_mlx_datas *mlx)
     {
         while (X < 1000)
         {
-            if (mlx->map[i][n] == 'E')
+            if (mlx->map[i][n] == 'I')
 		        mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->N1.img,\
                  X, Y);
 		    X += 50;
