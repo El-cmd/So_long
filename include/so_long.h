@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:02:23 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/23 04:39:14 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/24 05:32:53 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,20 @@ typedef struct mlx_data
 	int			win_y;
 	int			pokeball;
 	int			winner;
+	int			right;
+	int			left;
+	int			up;
+	int			down;
 	t_img_datas	wall;
 	t_img_datas	sol;
 	t_img_datas	N1;
 	t_img_datas	N2;
 	t_img_datas	exit;
-	t_img_datas poke;
+	t_img_datas	poke;
+	t_img_datas	p_up;
+	t_img_datas	p_down;
+	t_img_datas	p_left;
+	t_img_datas	p_right;
 }	t_mlx_datas;
 
 typedef struct all
@@ -69,8 +77,13 @@ void	put_wall(t_mlx_datas *mlx);
 int		put_all(t_mlx_datas *mlx);
 void	put_n1(t_mlx_datas *mlx);
 void	put_n2(t_mlx_datas *mlx);
-void    put_exit(t_mlx_datas *mlx);
-void    put_pokeball(t_mlx_datas *mlx);
+void	put_exit(t_mlx_datas *mlx);
+void	put_pokeball(t_mlx_datas *mlx);
+void    p_p_right(t_mlx_datas *mlx);
+void    p_p_left(t_mlx_datas *mlx);
+void    p_p_up(t_mlx_datas *mlx);
+void    p_p_down(t_mlx_datas *mlx);
+void    put_red(t_mlx_datas *mlx);
 void	hakai(t_mlx_datas *mlx);
 
 #endif

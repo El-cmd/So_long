@@ -6,14 +6,15 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:01:15 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/23 03:58:35 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/24 05:49:12 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/so_long.h"
 
-static void	move_r(t_mlx_datas *mlx)
+void	move_r(t_mlx_datas *mlx)
 {
+	mlx->right = 1;
 	if (can_move(mlx, mlx->p_x + 1, mlx->p_y))
 	{
 		mlx->map[mlx->p_y][mlx->p_x] = '0';	
@@ -24,6 +25,7 @@ static void	move_r(t_mlx_datas *mlx)
 
 void	move_l(t_mlx_datas *mlx)
 {
+	mlx->left = 1;
 	if (can_move(mlx, mlx->p_x - 1, mlx->p_y))
 	{
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -34,6 +36,7 @@ void	move_l(t_mlx_datas *mlx)
 
 void	move_u(t_mlx_datas *mlx)
 {	
+	mlx->up = 1;
 	if (can_move(mlx, mlx->p_x, mlx->p_y - 1))
 	{
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -44,6 +47,7 @@ void	move_u(t_mlx_datas *mlx)
 
 void	move_d(t_mlx_datas *mlx)
 {
+	mlx->down = 1;
 	if (can_move(mlx, mlx->p_x, mlx->p_y + 1))
 	{
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -55,6 +59,10 @@ void	move_d(t_mlx_datas *mlx)
 int	test(int keycode, t_mlx_datas *mlx)
 {
 	int i = 0;
+	mlx->right = 0;
+	mlx->left = 0;
+	mlx->up = 0;
+	mlx->down = 0;
 	if (keycode == 'd')
 		move_r(mlx);
 	if (keycode == 'q')

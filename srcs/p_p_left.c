@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_all.c                                          :+:      :+:    :+:   */
+/*   p_p_left.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 03:09:37 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/24 05:43:36 by vlothlinux       ###   ########.fr       */
+/*   Created: 2021/12/24 05:04:08 by vlothlinux        #+#    #+#             */
+/*   Updated: 2021/12/24 05:10:50 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int put_all(t_mlx_datas *mlx)
+void    p_p_left(t_mlx_datas *mlx)
 {
-	static int	i = 0;
+    int i;
+    int n;
+    int X;
+    int Y;
 
-    i++;
-    if (mlx->winner == 1)
-        mlx_loop_end(mlx->mlx);
-    if (i == 200)
-        put_n2(mlx);
-    if (i == 900)
+    Y  = 0;
+    X  = 0;
+    n = 0;
+    i = 0;
+    while (Y < 500)
     {
-        put_sol(mlx);
-        put_wall(mlx);
-        put_exit(mlx);
-        put_pokeball(mlx);
-	    put_red(mlx);
-    }
-	if (i == 1500)
-    {
-		put_n1(mlx);
-        i = 0;
-    }
-    return 0;
+        while (X < 1000)
+        {
+            if (mlx->map[i][n] == 'P')
+		        mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->p_left.img,\
+                X, Y);
+		    X += 50;
+            n++;
+        }
+        n = 0;
+        Y += 50;
+        X = 0;
+        i++;
+	}
 }
