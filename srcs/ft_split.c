@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 01:42:59 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/20 02:59:40 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/30 07:59:53 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ char	**ft_split(char *s, char c)
 	dst = (char **)malloc(sizeof(char *) * (l + 1));
 	if (dst == NULL)
 		return (NULL);
-    dst = affect(s, dst, c, l);
-    free(s);
-    s = NULL;
+	dst = affect(s, dst, c, l);
+	free(s);
+	s = NULL;
 	return (dst);
 }

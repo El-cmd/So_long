@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:16:10 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/20 05:28:05 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/30 07:58:49 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	read_map(t_mlx_datas *mlx)
 {
 	int	fd;
-	int i;
+	int	i;
 
 	i = 0;
 	fd = open("map/map.ber", O_RDONLY);

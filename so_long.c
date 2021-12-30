@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:01:15 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/24 05:49:12 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/30 07:52:32 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	move_r(t_mlx_datas *mlx)
 		mlx->map[mlx->p_y][mlx->p_x] = '0';	
 		mlx->p_x++;
 		mlx->map[mlx->p_y][mlx->p_x] = 'P';
+		mlx->count++;
 	}
 }	
 
@@ -31,6 +32,7 @@ void	move_l(t_mlx_datas *mlx)
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
 		mlx->p_x--;
 		mlx->map[mlx->p_y][mlx->p_x] = 'P';
+		mlx->count++;
 	}
 }
 
@@ -42,6 +44,7 @@ void	move_u(t_mlx_datas *mlx)
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
 		mlx->p_y--;
 		mlx->map[mlx->p_y][mlx->p_x] = 'P';
+		mlx->count++;
 	}
 }
 
@@ -53,12 +56,12 @@ void	move_d(t_mlx_datas *mlx)
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
 		mlx->p_y++;
 		mlx->map[mlx->p_y][mlx->p_x] = 'P';
+		mlx->count++;
 	}
 }
 
 int	test(int keycode, t_mlx_datas *mlx)
 {
-	int i = 0;
 	mlx->right = 0;
 	mlx->left = 0;
 	mlx->up = 0;
@@ -71,14 +74,7 @@ int	test(int keycode, t_mlx_datas *mlx)
 		move_u(mlx);
 	if (keycode == 's')
 		move_d(mlx);
-	while (mlx->map[i] != NULL)
-	{
-		printf("%s\n", mlx->map[i]);
-		i++;
-	}
-	printf("\n");
-	printf("x = %d y = %d et poke = %d\n", mlx->p_x, mlx->p_y, mlx->pokeball);
-	return 0;
+	return (0);
 }
 
 int	close_win(int keysym, t_mlx_datas *mlx)
@@ -109,5 +105,5 @@ int	main()
 	mlx_hook(tout.mlx->win, 17, 1L << 0, close_win_cross, &tout);
 	mlx_loop(tout.mlx->mlx);
 	hakai(tout.mlx);
-	return 0;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 01:11:35 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/23 01:26:55 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/30 07:02:44 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ void	destruction(t_mlx_datas *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->sol.img);
 	mlx_destroy_image(mlx->mlx, mlx->N1.img);
 	mlx_destroy_image(mlx->mlx, mlx->N2.img);
+	mlx_destroy_image(mlx->mlx, mlx->exit.img);
+	mlx_destroy_image(mlx->mlx, mlx->poke.img);
+	mlx_destroy_image(mlx->mlx, mlx->p_up.img);
+	mlx_destroy_image(mlx->mlx, mlx->p_down.img);
+	mlx_destroy_image(mlx->mlx, mlx->p_left.img);
+	mlx_destroy_image(mlx->mlx, mlx->p_right.img);
 }
 
 void	hakai(t_mlx_datas *mlx)

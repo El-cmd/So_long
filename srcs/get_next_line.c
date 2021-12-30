@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 01:23:51 by vloth             #+#    #+#             */
-/*   Updated: 2021/12/20 02:52:40 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2021/12/30 07:40:40 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char	*freeee(char *save)
 	}
 	return (save);
 }
+
 char	*ft_strdup(char *s)
 {
 	char	*tab;
