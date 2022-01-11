@@ -6,13 +6,13 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:40:33 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/30 07:39:48 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/10 15:08:45 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void	find_P(t_mlx_datas *mlx)
+void	find_p(t_mlx_datas *mlx)
 {
 	int	i;
 	int	n;

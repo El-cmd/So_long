@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 04:34:02 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/30 07:56:44 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/10 15:30:52 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@ void	put_pokeball(t_mlx_datas *mlx)
 {
 	int	i;
 	int	n;
-	int	X;
-	int	Y;
+	int	x;
+	int	y;
 
-	Y = 0;
-	X = 0;
+	y = 0;
+	x = 0;
 	n = 0;
 	i = 0;
-	while (Y < 500)
+	while (y < 500)
 	{
-		while (X < 1000)
+		while (x < 1000)
 		{
 			if (mlx->map[i][n] == 'C')
 				mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->poke.img, \
-				X, Y);
-			X += 50;
+				x, y);
+			x += 50;
 			n++;
 		}
 		n = 0;
-		Y += 50;
-		X = 0;
+		y += 50;
+		x = 0;
 		i++;
 	}
 }

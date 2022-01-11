@@ -6,59 +6,11 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:01:15 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/30 07:52:32 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/10 15:09:11 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/so_long.h"
-
-void	move_r(t_mlx_datas *mlx)
-{
-	mlx->right = 1;
-	if (can_move(mlx, mlx->p_x + 1, mlx->p_y))
-	{
-		mlx->map[mlx->p_y][mlx->p_x] = '0';	
-		mlx->p_x++;
-		mlx->map[mlx->p_y][mlx->p_x] = 'P';
-		mlx->count++;
-	}
-}	
-
-void	move_l(t_mlx_datas *mlx)
-{
-	mlx->left = 1;
-	if (can_move(mlx, mlx->p_x - 1, mlx->p_y))
-	{
-		mlx->map[mlx->p_y][mlx->p_x] = '0';
-		mlx->p_x--;
-		mlx->map[mlx->p_y][mlx->p_x] = 'P';
-		mlx->count++;
-	}
-}
-
-void	move_u(t_mlx_datas *mlx)
-{	
-	mlx->up = 1;
-	if (can_move(mlx, mlx->p_x, mlx->p_y - 1))
-	{
-		mlx->map[mlx->p_y][mlx->p_x] = '0';
-		mlx->p_y--;
-		mlx->map[mlx->p_y][mlx->p_x] = 'P';
-		mlx->count++;
-	}
-}
-
-void	move_d(t_mlx_datas *mlx)
-{
-	mlx->down = 1;
-	if (can_move(mlx, mlx->p_x, mlx->p_y + 1))
-	{
-		mlx->map[mlx->p_y][mlx->p_x] = '0';
-		mlx->p_y++;
-		mlx->map[mlx->p_y][mlx->p_x] = 'P';
-		mlx->count++;
-	}
-}
 
 int	test(int keycode, t_mlx_datas *mlx)
 {
@@ -90,20 +42,23 @@ int	close_win_cross(t_mlx_datas *mlx)
 	return (0);
 }
 
-int	main()
+int	main(int ac, char **av)
 {
 	t_all	tout;
 
-	read_map(tout.mlx);
-	find_P(tout.mlx);
-	count_c(tout.mlx);
-	init(tout.mlx);
-	init_img(tout.mlx);
-	mlx_key_hook(tout.mlx->win, test, &tout);
-	mlx_loop_hook(tout.mlx->mlx, put_all, &tout);
-	mlx_hook(tout.mlx->win, 2, 1L << 0, close_win, &tout);
-	mlx_hook(tout.mlx->win, 17, 1L << 0, close_win_cross, &tout);
-	mlx_loop(tout.mlx->mlx);
+	if (ac == 2)
+	{
+		read_map(tout.mlx, av[1]);
+		find_p(tout.mlx);
+		count_c(tout.mlx);
+		init(tout.mlx);
+		init_img(tout.mlx);
+		mlx_key_hook(tout.mlx->win, test, &tout);
+		mlx_loop_hook(tout.mlx->mlx, put_all, &tout);
+		mlx_hook(tout.mlx->win, 2, 1L << 0, close_win, &tout);
+		mlx_hook(tout.mlx->win, 17, 1L << 0, close_win_cross, &tout);
+		mlx_loop(tout.mlx->mlx);
+	}
 	hakai(tout.mlx);
 	return (0);
 }

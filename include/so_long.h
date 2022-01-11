@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:02:23 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/30 06:22:54 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/10 15:34:44 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ typedef struct mlx_data
 	int			count;
 	t_img_datas	wall;
 	t_img_datas	sol;
-	t_img_datas	N1;
-	t_img_datas	N2;
+	t_img_datas	n1;
+	t_img_datas	n2;
 	t_img_datas	exit;
 	t_img_datas	poke;
 	t_img_datas	p_up;
@@ -65,10 +65,10 @@ typedef struct all
 	t_mlx_datas	mlx[1];
 }	t_all;
 
-void	read_map(t_mlx_datas *mlx);
+void	read_map(t_mlx_datas *mlx, char *av);
 char	**get_next_line(int fd);
 char	**ft_split(char *s, char c);
-void	find_P(t_mlx_datas *mlx);
+void	find_p(t_mlx_datas *mlx);
 void	init(t_mlx_datas *mlx);
 void	count_c(t_mlx_datas *mlx);
 int		can_move(t_mlx_datas *mlx, int x, int y);
@@ -87,5 +87,10 @@ void	p_p_up(t_mlx_datas *mlx);
 void	p_p_down(t_mlx_datas *mlx);
 void	put_red(t_mlx_datas *mlx);
 void	hakai(t_mlx_datas *mlx);
+void	move_d(t_mlx_datas *mlx);
+void	move_u(t_mlx_datas *mlx);
+void	move_l(t_mlx_datas *mlx);
+void	move_r(t_mlx_datas *mlx);
+size_t	ft_strlen(char *str);
 
 #endif
