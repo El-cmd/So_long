@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:16:10 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/10 14:59:55 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/11 04:08:20 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,9 @@ void	read_map(t_mlx_datas *mlx, char *av)
 	while (mlx->map[0][i] != 0)
 		i++;
 	mlx->x_max = i;
+	if (check_map(mlx) == 0)
+	{
+		freedom(mlx->map);
+		exit(1);
+	}
 }

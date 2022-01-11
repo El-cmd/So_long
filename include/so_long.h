@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:02:23 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/10 15:34:44 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/11 04:07:55 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,7 @@ void	move_u(t_mlx_datas *mlx);
 void	move_l(t_mlx_datas *mlx);
 void	move_r(t_mlx_datas *mlx);
 size_t	ft_strlen(char *str);
+int		check_map(t_mlx_datas *mlx);
+void	freedom(char **map);
 
 #endif

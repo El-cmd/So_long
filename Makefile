@@ -6,7 +6,7 @@
 #    By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 03:16:44 by vlothlinux        #+#    #+#              #
-#    Updated: 2022/01/11 03:26:14 by vlothlinux       ###   ########.fr        #
+#    Updated: 2022/01/11 04:49:54 by vlothlinux       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRC		= so_long.c \
 		  srcs/put_wall.c \
 		  srcs/ft_strlen.c \
 		  srcs/ft_move.c \
+		  srcs/check_map.c \
 		  srcs/read_map.c 
 
 OBJ		= $(SRC:.c=.o)
@@ -45,10 +46,10 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 		make -C mlx
-		$(CC) $(OBJ) -o $(NAME) mlx/libmlx_Linux.a -lX11 -lXext -g
+		$(CC) $(OBJ) -o $(NAME) mlx/libmlx_Linux.a -lX11 -lXext
 
 %.o: %.c
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=1000 -o $@ $<
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=1000 -o $@ $< -g
 
 bonus: all
 
