@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_all.c                                          :+:      :+:    :+:   */
+/*   ft_put_put.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 03:09:37 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/11 17:40:56 by vlothlinux       ###   ########.fr       */
+/*   Created: 2022/01/11 17:32:57 by vlothlinux        #+#    #+#             */
+/*   Updated: 2022/01/11 17:47:40 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int	put_all(t_mlx_datas *mlx)
+void	ft_put_put(t_mlx_datas *mlx)
 {
 	static int	i = 0;
 
 	i++;
-	if (mlx->winner == 1 || mlx->lose == 1)
-		mlx_loop_end(mlx->mlx);
-	if (i == 900)
+	if (i < 5)
+		put_n1(mlx);
+	if (i > 5)
 	{
-		put_sol(mlx);
-		put_wall(mlx);
-		put_exit(mlx);
-		put_pokeball(mlx);
-		put_red(mlx);
+		put_n2(mlx);
 	}
-	if (i == 1100)
-	{
-		ft_put_put(mlx);
+	if (i > 11)
 		i = 0;
-	}
-	return (0);
 }

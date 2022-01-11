@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_all.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 03:09:37 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/11 17:40:56 by vlothlinux       ###   ########.fr       */
+/*   Created: 2022/01/11 17:12:27 by vlothlinux        #+#    #+#             */
+/*   Updated: 2022/01/11 17:15:11 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int	put_all(t_mlx_datas *mlx)
+void	ft_putchar_fd(char c, int fd)
 {
-	static int	i = 0;
+	write(fd, &c, 1);
+}
 
-	i++;
-	if (mlx->winner == 1 || mlx->lose == 1)
-		mlx_loop_end(mlx->mlx);
-	if (i == 900)
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	if (n >= 0 && n < 10)
 	{
-		put_sol(mlx);
-		put_wall(mlx);
-		put_exit(mlx);
-		put_pokeball(mlx);
-		put_red(mlx);
+		ft_putchar_fd((n + 48), fd);
 	}
-	if (i == 1100)
+	if (n < 0 && n != -2147483648)
 	{
-		ft_put_put(mlx);
-		i = 0;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd((n * -1), fd);
 	}
-	return (0);
+	if (n >= 10)
+	{
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
+	}
 }

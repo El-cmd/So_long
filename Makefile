@@ -6,7 +6,7 @@
 #    By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 03:16:44 by vlothlinux        #+#    #+#              #
-#    Updated: 2022/01/11 04:49:54 by vlothlinux       ###   ########.fr        #
+#    Updated: 2022/01/11 17:38:44 by vlothlinux       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ SRC		= so_long.c \
 		  srcs/ft_strlen.c \
 		  srcs/ft_move.c \
 		  srcs/check_map.c \
+		  srcs/ft_putnbr_fd \
+		  srcs/ft_put_put.c \
 		  srcs/read_map.c 
 
 OBJ		= $(SRC:.c=.o)

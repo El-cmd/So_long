@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:01:15 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/11 04:06:29 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/11 17:18:14 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	test(int keycode, t_mlx_datas *mlx)
 		move_u(mlx);
 	if (keycode == 's')
 		move_d(mlx);
+	ft_putnbr_fd(mlx->count, 1);
+	ft_putstr_fd("\n", 1);
 	return (0);
 }
 
