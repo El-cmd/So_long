@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:01:15 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/15 07:28:56 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/15 17:10:25 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ int	main(int ac, char **av)
 
 	if (ac == 2)
 	{
-		read_map(tout.mlx, av[1]);
+		if (read_map(tout.mlx, av[1]) == 0)
+		{
+			return (0);
+		}
 		find_p(tout.mlx);
 		count_c(tout.mlx);
 		init(tout.mlx);

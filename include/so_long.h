@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:02:23 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/11 17:37:35 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/15 17:11:23 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct all
 	t_mlx_datas	mlx[1];
 }	t_all;
 
-void	read_map(t_mlx_datas *mlx, char *av);
+int		read_map(t_mlx_datas *mlx, char *av);
 char	**get_next_line(int fd);
 char	**ft_split(char *s, char c);
 void	find_p(t_mlx_datas *mlx);

@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 03:32:32 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/11 17:03:16 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/15 17:20:52 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ int	check_map(t_mlx_datas *mlx)
 	i = 0;
 	w = 0;
 	y = 0;
+	if (mlx->map[i] == NULL)
+	{
+		ft_putstr_fd("There is no map\n", 2);
+		return (0);
+	}
 	while (mlx->map[i] != NULL)
 	{
 		if (ft_strlen(mlx->map[0]) != ft_strlen(mlx->map[i]) \
