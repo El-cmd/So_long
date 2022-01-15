@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 01:01:15 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/15 17:10:25 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/15 18:24:02 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	main(int ac, char **av)
 {
 	t_all	tout;
 
+	if (check_params(ac, av) == -1)
+		return (-1);
 	if (ac == 2)
 	{
 		if (read_map(tout.mlx, av[1]) == 0)
