@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 03:09:37 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/15 00:35:19 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/16 03:45:42 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	put_all(t_mlx_datas *mlx)
 		mlx_loop_end(mlx->mlx);
 	if (i == 900)
 	{
-		put_sol(mlx);
 		put_wall(mlx);
+		put_sol(mlx);
 		put_exit(mlx);
 		put_pokeball(mlx);
 		put_red(mlx);

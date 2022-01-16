@@ -6,28 +6,36 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:35:34 by vlothlinux        #+#    #+#             */
-/*   Updated: 2021/12/30 07:50:50 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/16 15:56:56 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
 void	put_sol(t_mlx_datas *mlx)
-{
-	int	n;
-	int	x;
+{	
+	static int	i;
+	static int	n;
+	static int	x;
+	static int	y;
 
+	y = 0;
 	x = 0;
 	n = 0;
-	while (mlx->map[x] != NULL)
+	i = 0;
+	while (y < mlx->win_y)
 	{
-		if (mlx->map[x][n] == 0)
+		while (x < mlx->win_x)
 		{
-			x++;
-			n = 0;
+			if (mlx->map[i][n] == '0')
+				mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->sol.img, \
+				x, y);
+			x += 50;
+			n++;
 		}
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->sol.img, mlx->px * n, \
-		mlx->px * x);
-		n++;
+		n = 0;
+		y += 50;
+		x = 0;
+		i++;
 	}
 }
