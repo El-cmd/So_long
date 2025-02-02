@@ -3,6 +3,10 @@
 ## Description
 So_long est un petit jeu 2D développé dans le cadre du cursus 42. Le joueur doit collecter tous les items et atteindre la sortie en évitant les obstacles.
 
+## Captures d'écran
+![So_long Gameplay](./assets/gameplay.png)
+*Capture d'écran du jeu en action*
+
 ## Prérequis
 Pour compiler et exécuter ce projet, vous aurez besoin des éléments suivants :
 
